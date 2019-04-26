@@ -1,14 +1,43 @@
-type User {
+type Player {
   id: Int!
-    name: String
+  name: String
+}
+
+type Game {
+  id: Int!
+  name: String
+  categories: [Category]
+  runs: [Run]
+}
+
+type Category {
+  id: Int!
+  name: String
+}
+
+type Run {
+  id: Int!
+  game: Game
+  player: Player
+  time: Int!
 }
 
 type Query {
-  users: [User]
+  players: [Player]
+  games: [Game]
+  categories: [Category]
+
+  player(id: Int!): Player
+  game(id: Int!): Game
+  category(id: Int!): Category
 }
 
 type Mutation {
-  addUser: User
+  createPlayer: Player
+  createGame: Game
+  createCategory: Category
+  createRun: Run
+  addCategoryToGame: Game
 }
 
 schema {
