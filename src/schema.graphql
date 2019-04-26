@@ -1,1 +1,17 @@
+type User {
+  id: Int!
+    name: String
+}
 
+type Query {
+  users: [User]
+}
+
+type Mutation {
+  addUser: User
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
