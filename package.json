@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^2.4.8"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
   }
 }
