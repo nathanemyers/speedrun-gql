@@ -1,22 +1,22 @@
 type Player {
-  id: Int!
+  id: String!
   name: String
 }
 
 type Game {
-  id: Int!
+  id: String!
   name: String
   categories: [Category]
   runs: [Run]
 }
 
 type Category {
-  id: Int!
+  id: String!
   name: String
 }
 
 type Run {
-  id: Int!
+  id: String!
   game: Game
   player: Player
   time: Int!
@@ -27,17 +27,17 @@ type Query {
   games: [Game]
   categories: [Category]
 
-  player(id: Int!): Player
-  game(id: Int!): Game
-  category(id: Int!): Category
+  player(id: String!): Player
+  game(id: String!): Game
+  category(id: String!): Category
 }
 
 type Mutation {
-  createPlayer: Player
-  createGame: Game
-  createCategory: Category
-  createRun: Run
-  addCategoryToGame: Game
+  createPlayer(name: String!): Player
+  createGame(name: String!): Game
+  createCategory(name: String!): Category
+  createRun(playerId: String!, gameId: String!, time: Int!): Run
+  addCategoryToGame(gameId: String!, categoryId: String!): Game
 }
 
 schema {

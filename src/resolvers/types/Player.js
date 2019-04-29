@@ -1,9 +1,9 @@
 export default {
-  id: () => {
-    return 1
+  id: ({id}) => {
+    return id 
   },
 
-  name: () => {
-    return 'bill'
+  name: ({name}) => {
+    return name
   }
 }
