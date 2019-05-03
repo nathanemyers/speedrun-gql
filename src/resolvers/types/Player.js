@@ -1,6 +1,6 @@
 export default {
-  id: ({id}) => {
-    return id 
+  id: ({_id}) => {
+    return _id 
   },
 
   name: ({name}) => {

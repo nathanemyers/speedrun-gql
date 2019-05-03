@@ -1,15 +1,11 @@
-import uuidv4 from 'uuid/v4'
-import { Player } from '../db/models'
+import Player from '../db/models/Player'
 
 export default {
-  createPlayer: async (_, args) => {
+  createPlayer: async (_, { name }) => {
     const player = new Player()
-    player.id = uuidv4()
-    player.name = args.name
+    player.name = name
     await player.save()
-    return {
-      id
-    }
+    return player
   },
   createGame: () => {
     return {}

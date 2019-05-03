@@ -1,6 +1,8 @@
+import Player from '../db/models/Player'
+
 export default {
   players: () => {
-    return [{}]
+    return Player.find()
   },
   games: () => {
     return [{}]
