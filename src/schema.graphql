@@ -32,12 +32,17 @@ type Query {
   category(id: String!): Category
 }
 
+type AddCategoryToGameOutput {
+  game: Game
+  category: Category
+}
+
 type Mutation {
   createPlayer(name: String!): Player
   createGame(name: String!): Game
   createCategory(name: String!): Category
   createRun(playerId: String!, gameId: String!, time: Int!): Run
-  addCategoryToGame(gameId: String!, categoryId: String!): Game
+  addCategoryToGame(gameId: String!, categoryId: String!): AddCategoryToGameOutput
 }
 
 schema {
