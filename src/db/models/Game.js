@@ -7,7 +7,6 @@ const GameSchema = new Schema({
     required: true,
   },
   categories: [ {type : mongoose.Schema.ObjectId, ref : 'Category'} ],
-  runs: [ {type : mongoose.Schema.ObjectId, ref : 'Run'} ],
 })
 
 export default mongoose.model('Game', GameSchema)

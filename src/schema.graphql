@@ -1,6 +1,7 @@
 type Player {
   id: String!
   name: String
+  runs: [Run]
 }
 
 type Game {
@@ -13,6 +14,7 @@ type Game {
 type Category {
   id: String!
   name: String
+  games: [Game]
 }
 
 type Run {

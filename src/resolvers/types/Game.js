@@ -1,16 +1,26 @@
-//import Category from '../db/models/Category'
-//import Run from '../db/models/Run'
+import mongoose from 'mongoose'
+
+import Category from '../../db/models/Category'
+import Run from '../../db/models/Run'
 
 export default {
   id: ({_id}) => {
     return _id 
   },
 
-  categories: ({ categories }) => {
-    return categories
+  categories: async ({ categories }) => {
+    return Category.find({
+      '_id': { 
+        $in: categories.map(category => mongoose.Types.ObjectId(category))
+      }
+    })
   },
 
-  runs: ({ runs }) => {
-    return runs
+  runs: async ({ runs }) => {
+    return Run.find({
+      '_id': { 
+        $in: runs.map(run => mongoose.Types.ObjectId(run))
+      }
+    })
   },
 }

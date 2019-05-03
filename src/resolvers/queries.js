@@ -7,16 +7,10 @@ export default {
     return Player.find()
   },
   games: () => {
-    return Game
-      .find()
-      .populate('categories')
-      .exec()
+    return Game.find()
   },
   categories: () => {
-    return Category
-      .find()
-      .populate('games')
-      .exec()
+    return Category.find()
   },
 
   player: () => {

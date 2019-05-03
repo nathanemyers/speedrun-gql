@@ -25,9 +25,11 @@ export default {
     return category
   },
 
-  createRun: async () => {
+  createRun: async (_, { gameId, playerId, time }) => {
     const run = new Run()
-    run.name = name
+    run.game = gameId
+    run.player = playerId
+    run.time = time
     await run.save()
     return run
   },
