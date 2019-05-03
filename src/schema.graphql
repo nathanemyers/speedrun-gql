@@ -1,14 +1,14 @@
 type Player {
   id: String!
   name: String
-  runs: [Run]
+  runs(limit: Int = 10): [Run]
 }
 
 type Game {
   id: String!
   name: String
   categories: [Category]
-  runs: [Run]
+  runs(limit: Int = 10): [Run]
 }
 
 type Category {
@@ -25,13 +25,15 @@ type Run {
 }
 
 type Query {
-  players: [Player]
-  games: [Game]
-  categories: [Category]
+  players(name: String): [Player]
+  games(name: String): [Game]
+  categories(name: String): [Category]
 
   player(id: String!): Player
   game(id: String!): Game
   category(id: String!): Category
+
+  topPlayers(categoryId: String!, limit: Int = 10): [Player]
 }
 
 type AddCategoryToGameOutput {

@@ -16,11 +16,15 @@ export default {
     })
   },
 
-  runs: async ({ runs }) => {
+  runs: async ({ runs }, { limit }) => {
     return Run.find({
       '_id': { 
         $in: runs.map(run => mongoose.Types.ObjectId(run))
-      }
+      },
+      sort: {
+        time: 'asc'
+      },
+      limit: limit,
     })
   },
 }
