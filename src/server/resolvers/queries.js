@@ -29,20 +29,14 @@ export default {
     return Category.find(filter)
   },
 
-  player: (_, { playerId }) => {
-    return Player.find({
-      id: playerId
-    })
+  player: (_, { id }) => {
+    return Player.findById(id)
   },
-  game: (_, { gameId }) => {
-    return Game.find({
-      id: gameId
-    })
+  game: (_, { id }) => {
+    return Game.findById(id)
   },
-  category: (_, { categoryId }) => {
-    return Category.find({
-      id: categoryId
-    })
+  category: (_, { id }) => {
+    return Category.findById(id)
   },
 
   // sorry this is very hacky

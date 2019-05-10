@@ -40,9 +40,12 @@ export default function GameDetails(props) {
           if (error) {
             return <h3>ERROR</h3>
           }
+          console.info(data)
+
+          const { game } = data
 
           return (
-            <div>{data.name}</div>
+            <div>{game.name}</div>
           )
         }}
     </Query>
