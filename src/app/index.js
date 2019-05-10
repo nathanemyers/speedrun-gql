@@ -7,8 +7,10 @@ import { ApolloProvider } from "react-apollo"
 import Home from './containers/Home'
 import Games from './containers/Games'
 import Categories from './containers/Categories'
+import Players from './containers/Players'
 import GameDetails from './containers/GameDetails'
-
+import CategoryDetails from './containers/CategoryDetails'
+import PlayerDetails from './containers/PlayerDetails'
 
 const client = new ApolloClient({
   uri: "http://localhost:4000"
@@ -21,9 +23,12 @@ function App() {
       <div>
         <Games />
         <Categories />
+        <Players />
 
         <Route path="/" exact component={Home} />
         <Route path="/game/:id" component={GameDetails} />
+        <Route path="/category/:id" component={CategoryDetails} />
+        <Route path="/player/:id" component={PlayerDetails} />
       </div>
     </Router>
   </ApolloProvider>

@@ -5,14 +5,10 @@ import { gql } from "apollo-boost"
 import { Query } from "react-apollo"
 
 const query = gql`
-query Game($gameID: String!){
-  game(id: $gameID) {
+query Player($playerID: String!){
+  player(id: $playerID) {
     name
     id
-    categories {
-      name
-      id
-    }
   }
 }
 `
@@ -29,15 +25,15 @@ const ListItem = styled.li`
 
 `
 
-export default function GameDetails(props) {
+export default function PlayerDetails(props) {
   const {
     match,
   } = props
 
-  const gameID = match.params.id
+  const playerID = match.params.id
 
   return (
-    <Query query={query} variables={{ gameID }} >
+    <Query query={query} variables={{ playerID }} >
         {({loading, data, error}) => {
           if (loading) {
             return <h3>LOADING....</h3>
@@ -46,21 +42,11 @@ export default function GameDetails(props) {
             return <h3>ERROR</h3>
           }
 
-          const { game } = data
-
-          const categories = game.categories.map(category => (
-            <ListItem key={category.id}>
-              <Link to={`/category/${category.id}`}>{category.name}</Link>
-            </ListItem>
-          ))
-
+          const { player } = data
 
           return (
             <Container>
-              <h3>{game.name}</h3>
-              <List>
-                  { categories }
-              </List>
+              <h3>{player.name}</h3>
             </Container>
           )
         }}

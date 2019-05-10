@@ -1,0 +1,6 @@
+query fetchPlayers {
+  players {
+    name
+    id
+  }
+}
