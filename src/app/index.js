@@ -6,6 +6,7 @@ import { ApolloProvider } from "react-apollo"
 
 import Home from './containers/Home'
 import Games from './containers/Games'
+import Categories from './containers/Categories'
 import GameDetails from './containers/GameDetails'
 
 
@@ -19,6 +20,7 @@ function App() {
     <Router>
       <div>
         <Games />
+        <Categories />
 
         <Route path="/" exact component={Home} />
         <Route path="/game/:id" component={GameDetails} />
