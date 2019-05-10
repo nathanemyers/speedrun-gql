@@ -9,22 +9,18 @@ export default {
   },
 
   categories: async ({ categories }) => {
-    return Category.find({
+    return await Category.find({
       '_id': { 
         $in: categories.map(category => mongoose.Types.ObjectId(category))
       }
     })
   },
 
-  runs: async ({ runs }, { limit }) => {
-    return Run.find({
-      '_id': { 
-        $in: runs.map(run => mongoose.Types.ObjectId(run))
-      },
-      sort: {
-        time: 'asc'
-      },
-      limit: limit,
+  runs: async ({ _id }, { limit }) => {
+    return await Run.find({
+      game: mongoose.Types.ObjectId(_id),
     })
+      .sort({time: 1})
+      .limit(limit)
   },
 }

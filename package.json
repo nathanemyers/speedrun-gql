@@ -4,20 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "parcel watch src/index.js --target node",
-    "start": "node dist/index.js"
+    "build:server": "parcel watch src/server/index.js --target node",
+    "start:server": "node dist/index.js",
+    "start:app": "parcel src/app/index.html"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-boost": "^0.3.1",
     "apollo-server": "^2.4.8",
-    "graphql": "^14.2.1",
+    "graphql": "^14.3.0",
     "graphql-tag": "^2.10.1",
     "lodash": "^4.17.11",
     "mongoose": "^5.5.4",
+    "react": "^16.8.6",
+    "react-apollo": "^2.5.5",
+    "react-dom": "^16.8.6",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "eslint": "^5.16.0"
   }
 }
