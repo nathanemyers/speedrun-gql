@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import GameLink from './GameLink'
@@ -12,6 +13,10 @@ const ListItem = styled.li`
 
 `
 
+const propTypes = {
+  games: PropTypes.array.isRequired
+}
+
 export default function GameList(props) {
   const links = props.games.map(game => (
 
@@ -22,7 +27,9 @@ export default function GameList(props) {
 
   return (
     <List>
-      { links }
+      {links}
     </List>
   )
 }
+
+GameList.propTypes = propTypes
