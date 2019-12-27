@@ -12,24 +12,24 @@
   "license": "ISC",
   "dependencies": {
     "apollo-boost": "^0.3.1",
-    "apollo-server": "^2.4.8",
-    "graphql": "^14.3.0",
+    "apollo-server": "^2.9.15",
+    "graphql": "^14.5.8",
     "graphql-tag": "^2.10.1",
-    "lodash": "^4.17.14",
-    "mongoose": "^5.5.4",
-    "react": "^16.8.6",
-    "react-apollo": "^2.5.5",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0",
-    "styled-components": "^4.2.0",
-    "uuid": "^3.3.2"
+    "lodash": "^4.17.15",
+    "mongoose": "^5.8.3",
+    "react": "^16.12.0",
+    "react-apollo": "^2.5.8",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "styled-components": "^4.4.1",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "eslint": "^5.16.0",
-    "eslint-plugin-react": "^7.13.0",
-    "parcel": "^1.12.3"
+    "eslint-plugin-react": "^7.17.0",
+    "parcel": "^1.12.4"
   }
 }
